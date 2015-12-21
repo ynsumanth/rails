@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  feildName: MyString
+  departmentId: MyString
+
+two:
+  id: 2
+  feildName: MyString
+  departmentId: MyString

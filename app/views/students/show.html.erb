@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <td>
+      <p>
+  <strong>First Name:</strong>
+  <%= @student.firstName %>
+</p>
+
+<p>
+  <strong>Middle Name:</strong>
+  <%= @student.middleName %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @student.lastName %>
+</p>
+
+<p>
+  <strong>Email Id:</strong>
+  <%= @student.emailId %>
+</p>
+
+<p>
+  <strong>Mobile No:</strong>
+  <%= @student.mobileNo %>
+</p>
+
+<!-- Commented
+<p>
+  <strong>Permanent Address:</strong>
+  <%= @student.permanentAddress %>
+</p>
+
+<p>
+  <strong>Mailing Address:</strong>
+  <%= @student.mailingAddress %>
+</p>
+<p>
+  <strong>Password:</strong>
+  <%= @student.password %>
+</p>
+<p>
+  <strong>Password Confirmation:</strong>
+  <%= @student.password_confirmation %>
+</p>
+<p>
+  <strong>Department Id:</strong>
+  <%= @student.departmentId %>
+</p>
+-->
+<ol class="courses">
+  <%= render @courses %>
+</ol>
+<%= link_to 'Edit', edit_student_path(@student) %>
+      
+      
+    </td>
+    <td>
+      <section class="search_course">
+        <%= render 'search_course' %>
+      </section>
+      <% if !@courseSearched.nil? %>
+        <table>
+          <% @courseSearched.each do |cs| %>
+          <tr>
+            <td><% cs[:courseDescription] %> </td>
+            <td><% cs[:feildId] %> </td>
+          </tr>
+          <% end %>
+        </table>
+      <% end %>
+    </td>
+    
+  </tr>
+  
+</table>
+

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Feilds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feildid</th>
+      <th>Feildname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feilds.each do |feild| %>
+      <tr>
+        <td><%= feild.feildId %></td>
+        <td><%= feild.feildName %></td>
+        <td><%= link_to 'Show', feild %></td>
+        <td><%= link_to 'Edit', edit_feild_path(feild) %></td>
+        <td><%= link_to 'Destroy', feild, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feild', new_feild_path %>
