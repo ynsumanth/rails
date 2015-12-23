@@ -1,27 +1,27 @@
-== README
+This is a Course Registration Portal that I have developed to learn Rails. Students can use this portal to search and add courses. 
+Admin users can directly login and search/add/remove all the data including Students/ Courses/ Departments/ Fields.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To start the server, use the flg command:
 
-Things you may want to cover:
+  rails s -b $IP -p $PORT
+*****************************************************************************************************************************************
+Once the server is started, Students needs to use the below link for Loggging In.
 
-* Ruby version
+  https://rails-tutorial-sumanth-yn.c9users.io/
+  
+  For testing purpose, please use the below credentials to login as student
+    email: sumanth_yn@yahoo.com
+    pass#  password
+    
+*****************************************************************************************************************************************
+Administrative Department (simply Admin users) can use this link to redirect the login system and head over to the admin pages.
 
-* System dependencies
+  https://rails-tutorial-sumanth-yn.c9users.io/admin
+  
+*****************************************************************************************************************************************
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
