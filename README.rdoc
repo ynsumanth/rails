@@ -12,7 +12,8 @@ Once the server is started, Students needs to use the below link for Loggging In
   For testing purpose, please use the below credentials to login as student
     email: sumanth_yn@yahoo.com
     pass#  password
-    
+  
+  Use the keyword "Ruby on Rails" or "Ruby" or "Rails", to search for courses after logging in. Due to time contraint, I could not       implement a fully featured search here.
 *****************************************************************************************************************************************
 Administrative Department (simply Admin users) can use this link to redirect the login system and head over to the admin pages.
 
