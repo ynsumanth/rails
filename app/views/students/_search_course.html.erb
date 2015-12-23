@@ -1,10 +1,35 @@
-<h4>Inside Search Course form</h4>
+
 
 <%= form_tag('/search_course') do -%>
-<div class="field">
-        <%= search_field_tag 'content', 'Search course by Description' %>
-</div>
-<div><%= submit_tag 'Search' %></div>
+<table>
+    <tr>
+        <td>
+        <div class="field">
+            <%= search_field_tag 'content', 'Search course by Description' %>
+        </div>
+        <div><%= submit_tag 'Search' %></div> 
+            
+        </td>
+        
+    </tr>
+    <tr>
+      <% if session[:courseSearched] %>
+      
+        <table>
+          
+          <tr>
+              <td>You searched for </td>
+            <td><%= session[:courseSearched] %> </td>
+            <td><%= session[:feildOfSearchedCourse] %></td>
+          </tr>
+          
+        </table>
+      <% end %>
+    
+    </tr>
+    
+</table>
+
 <% end -%>
 
 

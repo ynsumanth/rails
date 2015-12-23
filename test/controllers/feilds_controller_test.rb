@@ -18,7 +18,7 @@ class FeildsControllerTest < ActionController::TestCase
 
   test "should create feild" do
     assert_difference('Feild.count') do
-      post :create, feild: { feildId: @feild.feildId, feildName: @feild.feildName }
+      post :create, feild: { feildId: @feild.id, feildName: @feild.feildName, departmentId: "1" }
     end
 
     assert_redirected_to feild_path(assigns(:feild))
@@ -35,7 +35,7 @@ class FeildsControllerTest < ActionController::TestCase
   end
 
   test "should update feild" do
-    patch :update, id: @feild, feild: { feildId: @feild.feildId, feildName: @feild.feildName }
+    patch :update, id: @feild, feild: { feildId: @feild.id, feildName: @feild.feildName }
     assert_redirected_to feild_path(assigns(:feild))
   end
 

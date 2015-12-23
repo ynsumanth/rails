@@ -25,3 +25,16 @@ two:
   emergencyContact: '0000000000'
   password_digest: MyString
   departmentId: '2'
+
+three:
+  id: 3
+  firstName: MyString
+  middleName: MyString
+  lastName: MyString
+  emailId: example@oracle.com
+  mobileNo: MyString
+  permanentAddress: MyString
+  mailingAddress: MyString
+  emergencyContact: '0000000000'
+  password_digest: MyString
+  departmentId: '2'

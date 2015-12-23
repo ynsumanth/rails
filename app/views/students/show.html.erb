@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<table>
+<table class="table table-striped">
   <tr>
     <td>
       <p>
@@ -62,19 +62,9 @@
       <section class="search_course">
         <%= render 'search_course' %>
       </section>
-      <% if !@courseSearched.nil? %>
-        <table>
-          <% @courseSearched.each do |cs| %>
-          <tr>
-            <td><% cs[:courseDescription] %> </td>
-            <td><% cs[:feildId] %> </td>
-          </tr>
-          <% end %>
-        </table>
-      <% end %>
+      
     </td>
     
   </tr>
   
 </table>
-

@@ -21,10 +21,11 @@ class StudentsController < ApplicationController
      if !params[:id].nil?
        #@student = Student.find(params[:id])
        session[:studentId] = @student.id
+       
      else 
-       @student = session[:student]
+       @student = Student.find(session[:studentId]);
      end
-     byebug
+     #byebug
      
      @microposts = Micropost.where(student_id: params[:id]).all
      @courses ||= Array.new
@@ -33,8 +34,9 @@ class StudentsController < ApplicationController
        @courses.push(@course)
      end
      @courseSearched = session[:courseSearched]
-     session[:courseSearched] = nil
-     byebug
+     @feildOfCourse = session[:feildOfSearchedCourse]
+     #session[:courseSearched] = nil
+     #byebug
     
   end
 
@@ -67,6 +69,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+    
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
@@ -81,6 +84,7 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
+    
     @student.destroy
     respond_to do |format|
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
@@ -95,9 +99,11 @@ class StudentsController < ApplicationController
   def searchCourse
     
     @courseSearched = Course.where("courseDescription like?","%#{params[:content]}%")
-    session[:courseSearched] = @courseSearched
-    @student = session[:student]
-    byebug
+    session[:courseSearched] = @courseSearched.first.courseDescription
+    @feild = Feild.find(@courseSearched.first.feildId);
+    session[:feildOfSearchedCourse] = @feild.feildName
+    @student = Student.find(session[:studentId]);
+    #byebug
     respond_to do |format|
       format.html { redirect_to @student}
       format.json { render :show, status: :ok, location: @student }
@@ -108,7 +114,7 @@ class StudentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       #byebug
-      @student = Student.find(session[:student_id])
+      @student = Student.find(session[:studentId])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

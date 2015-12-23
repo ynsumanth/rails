@@ -14,7 +14,7 @@
   <tbody>
     <% @feilds.each do |feild| %>
       <tr>
-        <td><%= feild.feildId %></td>
+        <td><%= feild.id %></td>
         <td><%= feild.feildName %></td>
         <td><%= link_to 'Show', feild %></td>
         <td><%= link_to 'Edit', edit_feild_path(feild) %></td>

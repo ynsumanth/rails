@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
       # redirect user to respective home page
       
       session[:emailId] = student.emailId
+      session[:courseSearched] = nil
+      session[:feildOfSearchedCourse] = nil
+      #byebug
       log_in student
       
       redirect_to student

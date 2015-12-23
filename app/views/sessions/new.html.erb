@@ -1,13 +1,14 @@
 <html>
 <title>
-    <h1>Sessions#new</h1>
+    <h1>Login</h1>
 </title>
 <script src=""></script>
 <style>
     .ul-list {
         clear: both;
         display: table;
-        width: 100%
+        width: 100%;
+        align: center
     }
     
     .ul-list:after {
@@ -24,7 +25,7 @@
     .input {
         background: #fff;
         transition: all 800ms;
-        width: 147px;
+        width: 70px;
         border-radius: 3px 0 0 3px;
         font-family: 'Ropa Sans', sans-serif;
         border: solid 1px #ccc;
@@ -100,25 +101,25 @@
 <body>
     <br><br>
     
-    <form action="/login" class="login" method="post" align="center">
+    <form action="/login" class="form-horizontal" method="post" align="center">
         <%= render 'shared/error_messages' %>
-        <div>
+        <div class="control-group">
             <ul class="ul-list">
-                <li>
-                    <input type="email" name="emailId" required="" class="input" placeholder="Your Email">
-                </li>
+                <div class="controls">
+                    <li>
+                        <input type="email" name="emailId" required="" class="input" placeholder="Your Email">
+                    </li>
+                </div>
+                <div class="controls">
                 <li>
                     <input type="password" name="password" required="" class="input" placeholder="Password">
                 </li>
+                </div>
+                <div class="form-actions">
                 <li>
-                    <span class="remember"><input type="checkbox" id="check"> 
-                        <label for="check">Remember Me</label>
-                    </span>
-                    <span class="remember"><a href="">Forgot Password</a></span>
+                    <input type="submit" value="SIGN IN" class="btn btn-primary">
                 </li>
-                <li>
-                    <input type="submit" value="SIGN IN" class="btn">
-                </li>
+                </div>
             </ul>
         </div>
     </form>
